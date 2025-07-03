@@ -1,0 +1,151 @@
+
+.yaml-generator-container {
+  display: flex;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.yaml-output-panel {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  .yaml-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      h2 {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+  }
+
+  .yaml-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex-grow: 1;
+    outline: none; // Remove default focus outline
+
+    &:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+  }
+}
+
+.control-panel {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .search-bar {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; // Ensures padding doesn't affect width
+  }
+}
+
+.property-tree-root {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 4px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.property-node {
+  padding-left: 20px;
+  position: relative;
+
+  .property-node-main {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+
+    .property-name {
+      cursor: pointer;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+
+      .toggle-icon {
+        margin-right: 8px;
+        font-size: 0.8em;
+        width: 10px;
+        display: inline-block;
+      }
+    }
+
+    .colon {
+        margin: 0 5px;
+    }
+
+    .property-value-input {
+        padding: 4px 6px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        flex-grow: 1;
+        max-width: 200px;
+    }
+
+    .add-btn, .remove-btn {
+        margin-left: auto;
+        padding: 3px 8px;
+        border-radius: 4px;
+        border: 1px solid;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+
+    .add-btn {
+        border-color: #28a745;
+        background-color: #eaf7ec;
+        color: #28a745;
+        &:hover { background-color: #d1f0d9; }
+    }
+
+    .remove-btn {
+        border-color: #dc3545;
+        background-color: #fbebee;
+        color: #dc3545;
+        margin-left: 8px;
+        &:hover { background-color: #f8d7da; }
+    }
+  }
+
+  .property-description {
+    font-size: 0.85em;
+    color: #666;
+    margin: 0 0 5px 28px; // Align with property name text
+    padding-left: 5px;
+    border-left: 2px solid #eee;
+  }
+
+  .property-node-children {
+    border-left: 1px dashed #ccc;
+    margin-left: 10px;
+  }
+}
