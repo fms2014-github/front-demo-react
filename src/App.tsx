@@ -1,4 +1,4 @@
-import YamlGenerator from './test';
+import YamlGenerator from './tools/yamlGenerator';
 import './app.scss';
 
 function App() {
